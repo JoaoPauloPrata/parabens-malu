@@ -1,0 +1,125 @@
+:root {
+  --bg: #fff7f3;
+  --text: #3a2a2f;
+  --muted: #8a6f76;
+  --accent: #e2557a;
+  --card: #ffffff;
+
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+}
+
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+  padding: 48px 0;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 9vw, 3.5rem);
+  line-height: 1.1;
+  margin: 0;
+  color: var(--accent);
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.message {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  margin: 0;
+  padding: 24px 0;
+}
+
+.video {
+  width: 100%;
+  margin: 0;
+}
+
+.video video {
+  width: 100%;
+  border-radius: 16px;
+  background: #000;
+}
+
+.video figcaption {
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.gift-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  border: none;
+  background: none;
+  color: var(--text);
+  font: inherit;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.gift-emoji {
+  font-size: 6rem;
+}
+
+.gift-card {
+  width: 100%;
+  background: var(--card);
+  border-radius: 20px;
+  padding: 32px 24px;
+  box-shadow: 0 12px 40px rgba(226, 85, 122, 0.18);
+}
+
+.gift-card img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.gift-card h2 {
+  color: var(--accent);
+  margin: 16px 0 8px;
+}
+
+.gift-valor {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 8px 0;
+}
+
+.gift-codigo {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 16px;
+  border: 2px dashed var(--accent);
+  border-radius: 8px;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+}
