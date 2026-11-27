@@ -1,11 +1,11 @@
 :root {
-  --bg: #fff7f3;
+  --bg: #efe3c8;          /* papel, igual à animação */
+  --sky: #9ccfe9;
   --text: #3a2a2f;
-  --muted: #8a6f76;
-  --accent: #e2557a;
-  --card: #ffffff;
+  --accent: #d6402f;
+  --card: #faf6ec;
 
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Fredoka', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   color: var(--text);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
@@ -15,111 +15,134 @@
   box-sizing: border-box;
 }
 
+html,
 body {
   margin: 0;
+  height: 100%;
+  overflow: hidden;
   background: var(--bg);
 }
 
-main {
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 0 20px;
+.stage {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(var(--sky), var(--bg));
 }
 
-.section {
-  min-height: 100svh;
+/* ---------- abertura ---------- */
+.intro {
+  position: absolute;
+  inset: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 32px;
+  padding: 24px 16px;
   text-align: center;
-  padding: 48px 0;
+  overflow: hidden;
 }
 
-.hero h1 {
-  font-size: clamp(2.2rem, 9vw, 3.5rem);
-  line-height: 1.1;
+.intro h1 {
   margin: 0;
+  max-width: 14ch;
+  font-size: clamp(2rem, 9vw, 3.4rem);
+  line-height: 1.1;
   color: var(--accent);
 }
 
-.hero p {
-  color: var(--muted);
-  font-size: 1.1rem;
-  margin: 0;
+.intro-plane {
+  position: absolute;
+  top: 14%;
+  font-size: 3rem;
 }
 
-.message {
-  font-size: 1.3rem;
-  line-height: 1.5;
-  margin: 0;
-  padding: 24px 0;
-}
-
-.video {
-  width: 100%;
-  margin: 0;
-}
-
-.video video {
-  width: 100%;
-  border-radius: 16px;
-  background: #000;
-}
-
-.video figcaption {
-  color: var(--muted);
-  margin-top: 8px;
-}
-
-.gift-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
+.pill {
+  display: inline-block;
   border: none;
-  background: none;
-  color: var(--text);
+  border-radius: 999px;
+  padding: 14px 28px;
+  background: var(--accent);
+  color: #fff;
   font: inherit;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  box-shadow: 0 6px 0 #9c2a1e, 0 12px 24px rgba(60, 30, 10, 0.25);
   cursor: pointer;
 }
 
+/* ---------- animação ---------- */
+.animation {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: transparent;
+}
+
+/* ---------- presente ---------- */
+.gift-cta {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: max(6vh, 32px);
+  margin: 0 auto;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
 .gift-emoji {
-  font-size: 6rem;
+  font-size: 4.5rem;
+  filter: drop-shadow(0 6px 8px rgba(60, 30, 10, 0.3));
 }
 
 .gift-card {
-  width: 100%;
-  background: var(--card);
-  border-radius: 20px;
-  padding: 32px 24px;
-  box-shadow: 0 12px 40px rgba(226, 85, 122, 0.18);
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(40, 25, 15, 0.82);
+  perspective: 1200px;
 }
 
 .gift-card img {
-  width: 100%;
-  border-radius: 12px;
+  max-width: 100vw;
+  max-height: 100vh;
+  object-fit: contain;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
 }
 
-.gift-card h2 {
-  color: var(--accent);
-  margin: 16px 0 8px;
+/* celular em pé: o cartão é deitado, então gira para ocupar a tela toda */
+@media (orientation: portrait) {
+  .gift-card img {
+    max-width: 100vh;
+    max-width: 100svh;
+    max-height: 100vw;
+    rotate: 90deg;
+  }
 }
 
-.gift-valor {
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 8px 0;
-}
-
-.gift-codigo {
-  display: inline-block;
-  margin-top: 12px;
+.replay {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  border: none;
+  border-radius: 999px;
   padding: 8px 16px;
-  border: 2px dashed var(--accent);
-  border-radius: 8px;
-  font-size: 1.1rem;
-  letter-spacing: 0.1em;
+  background: rgba(250, 246, 236, 0.9);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  cursor: pointer;
 }

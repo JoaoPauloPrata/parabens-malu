@@ -28,3 +28,8 @@ qr
 
 .vercel
 .env*
+
+# animação (paper-cutout): dependências, renders e fotos originais
+animacao/node_modules
+animacao/out
+animacao/assets/src

@@ -2,9 +2,15 @@
 
 export const nome = 'Malu'
 
-export const hero = {
-  titulo: `Feliz aniversário, ${nome}!`,
-  subtitulo: 'Preparei uma coisinha pra você. Vai descendo devagar…',
+// Tela de abertura: o toque é necessário para o celular liberar o som do vídeo
+export const intro = {
+  titulo: `Malu, chegou uma entrega pra você!`,
+  botao: 'Toque para começar',
+}
+
+// Animação gerada em animacao/ (node render.mjs …) e copiada para public/videos/
+export const animacao = {
+  src: '/videos/aniversario.mp4',
 }
 
 export const mensagens = [
@@ -19,10 +25,8 @@ export const videos = [
 ]
 
 export const presente = {
-  chamada: 'Toque para abrir seu presente',
-  titulo: 'Vale-presente',
-  descricao: 'Descreva aqui o que é o presente.',
-  valor: '', // ex.: 'R$ 200'
-  codigo: '', // ex.: código do cartão, se houver
-  // imagem: '/images/cartao.png',
+  chamada: 'Clique para abrir o presente',
+  titulo: 'Vale-presente: 2 sessões de massoterapia',
+  imagem: '/images/cartao.jpg',
+  denovo: 'Ver a animação de novo',
 }
