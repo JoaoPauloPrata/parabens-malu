@@ -115,20 +115,10 @@ body {
 }
 
 .gift-card img {
-  max-width: 100vw;
-  max-height: 100vh;
+  max-width: calc(100vw - 16px);
+  max-height: calc(100vh - 96px);
   object-fit: contain;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-}
-
-/* celular em pé: o cartão é deitado, então gira para ocupar a tela toda */
-@media (orientation: portrait) {
-  .gift-card img {
-    max-width: 100vh;
-    max-width: 100svh;
-    max-height: 100vw;
-    rotate: 90deg;
-  }
 }
 
 .replay {
